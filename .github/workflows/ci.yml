@@ -3,12 +3,11 @@ on: push
 
 jobs:
   unit-test:
+    env:
+      CI: true
     name: Unit Test
     runs-on: ubuntu-latest
     steps:
-      - name: ENV
-        env:
-          CI: true
       - name: Checkout
         uses: actions/checkout@v2.0.0
       - name: Set Node.js 12.x
